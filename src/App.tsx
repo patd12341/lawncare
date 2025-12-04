@@ -9,6 +9,7 @@ import MowingService from './pages/services/MowingService';
 import AerationService from './pages/services/AerationService';
 import FertilizationService from './pages/services/FertilizationService';
 import CleanupService from './pages/services/CleanupService';
+import SnowRemovalService from './pages/services/SnowRemovalService';
 import ContactForm from './components/ContactForm';
 import TestimonialsSlider from './components/TestimonialsSlider';
 
@@ -88,7 +89,7 @@ function App() {
       description: 'Reliable snow plowing and removal services',
       image: snowRemoval,
       fallbackImage: 'https://images.unsplash.com/photo-1478265409131-1f65c88f965c?w=500&auto=format&fit=crop&q=60',
-      link: '#contact',
+      link: '/services/snow-removal',
       alt: 'Professional snow removal and plowing service in New Lenox'
     },
     {
@@ -394,6 +395,7 @@ function App() {
           <Route path="/services/aeration" element={<AerationService />} />
           <Route path="/services/fertilization" element={<FertilizationService />} />
           <Route path="/services/cleanup" element={<CleanupService />} />
+          <Route path="/services/snow-removal" element={<SnowRemovalService />} />
           <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
 
