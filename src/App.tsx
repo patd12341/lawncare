@@ -84,12 +84,12 @@ function App() {
       alt: 'Lawn aeration service in New Lenox - core aeration for healthy grass growth'
     },
     {
-      title: 'Fertilization',
-      description: 'Custom nutrient programs for a lush, green lawn',
-      image: fertilizationService,
-      fallbackImage: 'https://images.unsplash.com/photo-1734303023518-71e656574f50?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGxhd24lMjBjYXJlfGVufDB8fDB8fHww',
-      link: '/services/fertilization',
-      alt: 'Lawn fertilization service in New Lenox - professional fertilizer application'
+      title: 'Snow Removal',
+      description: 'Reliable snow plowing and removal services',
+      image: snowRemoval,
+      fallbackImage: 'https://images.unsplash.com/photo-1478265409131-1f65c88f965c?w=500&auto=format&fit=crop&q=60',
+      link: '#contact',
+      alt: 'Professional snow removal and plowing service in New Lenox'
     },
     {
       title: 'Landscaping Design',
