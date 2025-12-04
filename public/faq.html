@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | Pat's Lawn Care</title>
+    <meta name="description" content="Common questions about Pat's Lawn Care services in New Lenox, IL. Get answers about mowing, fertilization, aeration, pricing, and scheduling.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Accept-Ranges" content="none">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background-color: #f9fafb;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .header {
+            background-color: #065f46;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: #10b981;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            color: #059669;
+            text-decoration: underline;
+        }
+        
+        .faq-item {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 1.5rem;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .faq-question {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #f3f4f6;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+        
+        .faq-question:hover {
+            background-color: #e5e7eb;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #10b981;
+            transition: transform 0.2s;
+        }
+        
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            color: #374151;
+            padding: 1rem;
+            background-color: #f9fafb;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        .faq-answer p {
+            margin-bottom: 1rem;
+        }
+        
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .faq-answer ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-box {
+            background-color: #ecfdf5;
+            border: 1px solid #10b981;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .contact-box h3 {
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info {
+            color: #374151;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem 0.5rem;
+            }
+            
+            .header {
+                padding: 1.5rem 1rem;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            .faq-question {
+                font-size: 1.125rem;
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Frequently Asked Questions</h1>
+            <p>Pat's Lawn Care - New Lenox, IL</p>
+        </div>
+
+        <div class="content">
+            <a href="/" class="back-link">← Back to Home</a>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    How often should I have my lawn mowed?
+                </div>
+                <div class="faq-answer">
+                    <p>During the growing season (spring through fall), we recommend weekly mowing for optimal health and appearance. In slower growth periods or during drought conditions, bi-weekly service may be sufficient.</p>
+                    <p>Weekly mowing helps maintain the proper grass height, prevents stress on your lawn, and keeps it looking professionally maintained throughout the season.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    When is the best time to fertilize my lawn in Illinois?
+                </div>
+                <div class="faq-answer">
+                    <p>We follow a 4-step fertilization program optimized for Illinois growing conditions:</p>
+                    <ul>
+                        <li><strong>Early Spring (March-April):</strong> Pre-emergent + early feeding</li>
+                        <li><strong>Late Spring (May-June):</strong> Growth enhancement</li>
+                        <li><strong>Summer (July-August):</strong> Stress protection</li>
+                        <li><strong>Fall (September-October):</strong> Root strengthening winterizer</li>
+                    </ul>
+                    <p>Each application is timed for maximum effectiveness based on grass growth patterns and weather conditions.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    Do you provide free estimates?
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We provide completely free, no-obligation estimates for all our services. Simply fill out our contact form or call us at (708) 274-2281, and we'll schedule a convenient time to assess your property and provide a detailed quote.</p>
+                    <p>Our estimates include a thorough evaluation of your lawn's current condition and customized recommendations for your specific needs.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    What areas do you serve?
+                </div>
+                <div class="faq-answer">
+                    <p>We proudly serve Will County and surrounding areas, including:</p>
+                    <ul>
+                        <li>New Lenox</li>
+                        <li>Frankfort</li>
+                        <li>Mokena</li>
+                        <li>Manhattan</li>
+                        <li>Joliet</li>
+                        <li>Orland Park</li>
+                        <li>Tinley Park</li>
+                        <li>Homer Glen</li>
+                        <li>Lockport</li>
+                        <li>Romeoville</li>
+                    </ul>
+                    <p>If you're not sure if we serve your area, please give us a call and we'll let you know!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    When should I aerate my lawn?
+                </div>
+                <div class="faq-answer">
+                    <p>The best time for lawn aeration in Illinois is during the fall (September-October) when cool-season grasses are actively growing. Early spring (March-April) is also acceptable but fall is preferred.</p>
+                    <p>Signs your lawn needs aeration include:</p>
+                    <ul>
+                        <li>Compacted soil that's hard to penetrate</li>
+                        <li>Water pooling on the surface</li>
+                        <li>Thin or struggling grass growth</li>
+                        <li>Heavy thatch buildup</li>
+                        <li>High-traffic areas showing wear</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    Are you licensed and insured?
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, Pat's Lawn Care is fully licensed and insured. We carry comprehensive liability insurance to protect both our team and your property. We're happy to provide proof of insurance upon request.</p>
+                    <p>Our licensing and insurance give you peace of mind knowing you're working with a professional, legitimate business that takes responsibility seriously.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    What happens if it rains on my scheduled service day?
+                </div>
+                <div class="faq-answer">
+                    <p>We monitor weather conditions closely and will reschedule service if conditions aren't suitable for quality work. We never mow wet grass as it can damage your lawn and create an uneven cut.</p>
+                    <p>If weather delays occur, we'll contact you to reschedule for the next available day when conditions are appropriate. Your lawn's health is our priority.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    Do I need to be home during service?
+                </div>
+                <div class="faq-answer">
+                    <p>No, you don't need to be home during our service visits. We're experienced professionals who can work efficiently while you're away. We'll take care of your property as if it were our own.</p>
+                    <p>If you have specific instructions or concerns, we're happy to discuss them during our initial consultation or you can leave notes for our team.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    How do you handle grass clippings?
+                </div>
+                <div class="faq-answer">
+                    <p>We offer flexible options for grass clipping management based on your preference:</p>
+                    <ul>
+                        <li><strong>Mulching:</strong> Clippings are finely chopped and left on the lawn to decompose naturally, providing nutrients</li>
+                        <li><strong>Bagging:</strong> Clippings are collected and removed from your property</li>
+                        <li><strong>Side Discharge:</strong> Clippings are dispersed evenly across the lawn</li>
+                    </ul>
+                    <p>We'll discuss the best option for your lawn during our consultation.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    What makes Pat's Lawn Care different from other companies?
+                </div>
+                <div class="faq-answer">
+                    <p>Several factors set us apart:</p>
+                    <ul>
+                        <li><strong>Local Expertise:</strong> We're New Lenox residents who understand local soil and climate conditions</li>
+                        <li><strong>Reliability:</strong> Consistent, punctual service you can count on</li>
+                        <li><strong>Quality Equipment:</strong> Professional-grade tools for superior results</li>
+                        <li><strong>Personal Service:</strong> Direct communication with the owner, not a call center</li>
+                        <li><strong>Attention to Detail:</strong> We take pride in every property we maintain</li>
+                    </ul>
+                    <p>We treat every lawn as if it were our own and build lasting relationships with our clients.</p>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <h3>Still Have Questions?</h3>
+                <div class="contact-info">
+                    <p><strong>Call or Text:</strong> (708) 274-2281</p>
+                    <p><strong>Email:</strong> info@patwslawncare.com</p>
+                    <p><strong>Address:</strong> 621 N Cooper Rd, New Lenox, IL 60451</p>
+                    <p style="margin-top: 1rem;">We're here to help and happy to answer any questions about our services!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Pat's Lawn Care. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(questionElement) {
+            const answer = questionElement.nextElementSibling;
+            const isActive = questionElement.classList.contains('active');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                questionElement.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
+
+        // Ensure full content is loaded for scrapers
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.body.setAttribute('data-loaded', 'true');
+            }, 100);
+        });
+    </script>
+</body>
+</html>
