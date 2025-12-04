@@ -94,7 +94,7 @@ function App() {
     {
       title: 'Landscaping Design',
       description: 'Custom landscape design and installation services',
-      image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBpbmd8ZW58MHx8MHx8fDA%3D',
+      image: '/image.png',
       fallbackImage: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBpbmd8ZW58MHx8MHx8fDA%3D',
       link: '/landscaping.html',
       alt: 'Professional landscaping design and installation in New Lenox - custom outdoor spaces'
