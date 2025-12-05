@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { trackPageView } from '../lib/analytics';
 import GoveeContactForm from '../components/GoveeContactForm';
 import { Smartphone, Zap, Cloud, DollarSign, Shield, CheckCircle, Star } from 'lucide-react';
+import lightsImage from '../assets/Lights.webp';
+import lights1Image from '../assets/lights1.webp';
 
 const LightInstallation = () => {
   useEffect(() => {
@@ -27,11 +29,11 @@ const LightInstallation = () => {
       <div className="min-h-screen bg-white">
         {/* Hero Section */}
         <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white overflow-hidden">
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute inset-0" style={{
-              backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3), transparent 50%), radial-gradient(circle at 80% 80%, rgba(74, 158, 255, 0.3), transparent 50%)'
-            }}></div>
-          </div>
+          <div
+            className="absolute inset-0 opacity-30 bg-cover bg-center"
+            style={{ backgroundImage: `url(${lightsImage})` }}
+          ></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-blue-900/90 to-purple-900/80"></div>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
             <div className="text-center max-w-4xl mx-auto">
@@ -75,32 +77,28 @@ const LightInstallation = () => {
           <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
         </div>
 
-        {/* Image Placeholder Section */}
+        {/* Featured Images Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-16">
           <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl shadow-2xl overflow-hidden">
-            <div className="grid md:grid-cols-3 gap-4 p-8">
-              <div className="bg-white rounded-lg h-64 flex items-center justify-center text-gray-400 border-2 border-dashed border-gray-300">
-                <div className="text-center p-4">
-                  <p className="font-semibold mb-2">Govee Roofline Install</p>
-                  <p className="text-sm">Photo Coming Soon</p>
-                </div>
+            <div className="grid md:grid-cols-2 gap-4 p-8">
+              <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src={lightsImage}
+                  alt="Govee permanent outdoor lighting installation"
+                  className="w-full h-80 object-cover"
+                />
               </div>
-              <div className="bg-white rounded-lg h-64 flex items-center justify-center text-gray-400 border-2 border-dashed border-gray-300">
-                <div className="text-center p-4">
-                  <p className="font-semibold mb-2">Before & After</p>
-                  <p className="text-sm">Photo Coming Soon</p>
-                </div>
-              </div>
-              <div className="bg-white rounded-lg h-64 flex items-center justify-center text-gray-400 border-2 border-dashed border-gray-300">
-                <div className="text-center p-4">
-                  <p className="font-semibold mb-2">Night View</p>
-                  <p className="text-sm">Photo Coming Soon</p>
-                </div>
+              <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src={lights1Image}
+                  alt="Govee RGBIC permanent lights on home"
+                  className="w-full h-80 object-cover"
+                />
               </div>
             </div>
-            <div className="bg-blue-600 text-white text-center py-3 px-4">
-              <button onClick={scrollToForm} className="font-semibold hover:underline">
-                See Our Work → Request Your Free Quote
+            <div className="bg-blue-600 text-white text-center py-4 px-4">
+              <button onClick={scrollToForm} className="font-semibold hover:underline text-lg">
+                Transform Your Home Like This → Get Your Free Quote
               </button>
             </div>
           </div>
