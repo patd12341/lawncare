@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
 import { trackPageView } from '../lib/analytics';
 import GoveeContactForm from '../components/GoveeContactForm';
+import LightingHeader from '../components/LightingHeader';
+import LightingFooter from '../components/LightingFooter';
 import { Smartphone, Zap, Cloud, DollarSign, Shield, CheckCircle, Star } from 'lucide-react';
 import lightsImage from '../assets/Lights.webp';
 import lights1Image from '../assets/lights1.webp';
@@ -26,7 +27,9 @@ const LightInstallation = () => {
         <meta name="robots" content="noindex, follow" />
       </Helmet>
 
-      <div className="min-h-screen bg-white">
+      <LightingHeader />
+
+      <div className="min-h-screen bg-white pt-20">
         {/* Hero Section */}
         <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white overflow-hidden">
           <div
@@ -78,7 +81,7 @@ const LightInstallation = () => {
         </div>
 
         {/* Featured Images Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-16">
+        <div id="gallery" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-16">
           <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl shadow-2xl overflow-hidden">
             <div className="grid md:grid-cols-2 gap-4 p-8">
               <div className="bg-white rounded-lg overflow-hidden shadow-lg">
@@ -106,14 +109,8 @@ const LightInstallation = () => {
 
         {/* Main Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="mb-8">
-            <Link to="/" className="text-green-600 hover:text-green-700 font-medium">
-              ← Back to Home
-            </Link>
-          </div>
-
           {/* Why Govee Section */}
-          <div className="mb-20">
+          <div id="why-govee" className="mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-center">
               Why Choose Govee Permanent Outdoor Lighting?
             </h2>
@@ -165,7 +162,7 @@ const LightInstallation = () => {
           </div>
 
           {/* Pricing Section */}
-          <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 lg:p-12 mb-20 border border-green-200">
+          <div id="pricing" className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 lg:p-12 mb-20 border border-green-200">
             <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
               Typical Govee Installation Pricing
             </h2>
@@ -489,6 +486,8 @@ const LightInstallation = () => {
           </div>
         </div>
       </div>
+
+      <LightingFooter />
     </>
   );
 };
