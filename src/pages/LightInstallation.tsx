@@ -7,6 +7,7 @@ import LightingFooter from '../components/LightingFooter';
 import { Smartphone, Zap, Cloud, DollarSign, Shield, CheckCircle, Star } from 'lucide-react';
 import lightsImage from '../assets/Lights.webp';
 import lights1Image from '../assets/lights1.webp';
+import lights2Image from '../assets/lights2.jfif';
 
 const LightInstallation = () => {
   useEffect(() => {
@@ -83,7 +84,7 @@ const LightInstallation = () => {
         {/* Featured Images Section */}
         <div id="gallery" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-16">
           <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl shadow-2xl overflow-hidden">
-            <div className="grid md:grid-cols-2 gap-4 p-8">
+            <div className="grid md:grid-cols-3 gap-4 p-8">
               <div className="bg-white rounded-lg overflow-hidden shadow-lg">
                 <img
                   src={lightsImage}
@@ -95,6 +96,13 @@ const LightInstallation = () => {
                 <img
                   src={lights1Image}
                   alt="Govee RGBIC permanent lights on home"
+                  className="w-full h-80 object-cover"
+                />
+              </div>
+              <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src={lights2Image}
+                  alt="Professional Govee lighting installation"
                   className="w-full h-80 object-cover"
                 />
               </div>
