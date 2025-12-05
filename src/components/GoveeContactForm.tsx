@@ -36,6 +36,7 @@ const GoveeContactForm = () => {
     setErrorMessage('');
 
     try {
+      // Send to Supabase database
       const { error } = await supabase
         .from('contacts')
         .insert([{
@@ -48,6 +49,25 @@ const GoveeContactForm = () => {
         }]);
 
       if (error) throw error;
+
+      // Send to webhook
+      await fetch('https://hook.us2.make.com/o1r5uabdj45mubiom62d6cb444ofzz57', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: 'Govee Lighting Installation',
+          installLocation: formData.installLocation.join(', '),
+          rooflineLength: formData.rooflineLength,
+          hasLights: formData.hasLights,
+          message: formData.message,
+          source: 'govee-landing-page'
+        }),
+      });
 
       // Track form submission in Google Analytics
       if (window.gtag) {

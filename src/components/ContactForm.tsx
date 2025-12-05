@@ -28,6 +28,7 @@ const ContactForm = () => {
     setErrorMessage('');
 
     try {
+      // Send to Supabase database
       const { error } = await supabase
         .from('contacts')
         .insert([{
@@ -40,6 +41,23 @@ const ContactForm = () => {
         }]);
 
       if (error) throw error;
+
+      // Send to webhook
+      await fetch('https://hook.us2.make.com/o1r5uabdj45mubiom62d6cb444ofzz57', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address,
+          service: formData.service,
+          message: formData.message,
+          source: 'lawn-care-website'
+        }),
+      });
 
       // Track form submission in Google Analytics
       if (window.gtag) {
