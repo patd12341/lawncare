@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Phone, ChevronDown, Lightbulb } from 'lucide-react';
+import { Menu, X, Phone, Lightbulb } from 'lucide-react';
 
 const LightingHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -31,48 +30,6 @@ const LightingHeader = () => {
           </div>
 
           <nav className="hidden lg:flex items-center space-x-8">
-            <div className="relative">
-              <button
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
-                className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition-colors"
-              >
-                Lighting Services
-                <ChevronDown className="w-4 h-4 ml-1" />
-              </button>
-              {isServicesOpen && (
-                <div
-                  onMouseEnter={() => setIsServicesOpen(true)}
-                  onMouseLeave={() => setIsServicesOpen(false)}
-                  className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg py-2 border border-gray-100"
-                >
-                  <button
-                    onClick={() => scrollToSection('why-govee')}
-                    className="block w-full text-left px-4 py-3 hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition-colors"
-                  >
-                    Permanent Govee Lights
-                  </button>
-                  <button
-                    onClick={() => scrollToSection('why-govee')}
-                    className="block w-full text-left px-4 py-3 hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition-colors"
-                  >
-                    Holiday Lighting
-                  </button>
-                  <button
-                    onClick={() => scrollToSection('why-govee')}
-                    className="block w-full text-left px-4 py-3 hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition-colors"
-                  >
-                    Landscape Lighting
-                  </button>
-                  <button
-                    onClick={() => scrollToSection('why-govee')}
-                    className="block w-full text-left px-4 py-3 hover:bg-blue-50 text-gray-700 hover:text-blue-600 transition-colors"
-                  >
-                    Custom Designs
-                  </button>
-                </div>
-              )}
-            </div>
             <button
               onClick={() => scrollToSection('gallery')}
               className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
@@ -111,33 +68,6 @@ const LightingHeader = () => {
         {isMenuOpen && (
           <div className="lg:hidden border-t border-gray-200 py-4">
             <nav className="flex flex-col space-y-4">
-              <div>
-                <div className="font-semibold text-gray-900 mb-2">Lighting Services</div>
-                <button
-                  onClick={() => scrollToSection('why-govee')}
-                  className="block pl-4 py-2 text-gray-600 hover:text-blue-600"
-                >
-                  Permanent Govee Lights
-                </button>
-                <button
-                  onClick={() => scrollToSection('why-govee')}
-                  className="block pl-4 py-2 text-gray-600 hover:text-blue-600"
-                >
-                  Holiday Lighting
-                </button>
-                <button
-                  onClick={() => scrollToSection('why-govee')}
-                  className="block pl-4 py-2 text-gray-600 hover:text-blue-600"
-                >
-                  Landscape Lighting
-                </button>
-                <button
-                  onClick={() => scrollToSection('why-govee')}
-                  className="block pl-4 py-2 text-gray-600 hover:text-blue-600"
-                >
-                  Custom Designs
-                </button>
-              </div>
               <button
                 onClick={() => scrollToSection('gallery')}
                 className="text-left text-gray-700 hover:text-blue-600 font-medium"
