@@ -1,6 +1,13 @@
 import React, { useState, FormEvent } from 'react';
 import { supabase } from '../lib/supabase';
 
+declare global {
+  interface Window {
+    gtag: (command: string, event: string, params: object) => void;
+    fbq: any;
+  }
+}
+
 const GoveeContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -41,6 +48,30 @@ const GoveeContactForm = () => {
         }]);
 
       if (error) throw error;
+
+      // Track form submission in Google Analytics
+      if (window.gtag) {
+        // Google Analytics 4 event
+        window.gtag('event', 'form_submit', {
+          event_category: 'lead',
+          event_label: 'Govee Installation Form'
+        });
+
+        // Google Ads conversion tracking
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-11416594700/govee-conversion',
+          'value': 1.0,
+          'currency': 'USD'
+        });
+      }
+
+      // Track form submission in Facebook Pixel
+      if (window.fbq) {
+        window.fbq('track', 'Lead', {
+          content_name: 'Govee Installation',
+          content_category: 'Lighting Services'
+        });
+      }
 
       setStatus('success');
       setFormData({

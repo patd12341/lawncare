@@ -401,7 +401,8 @@ function App() {
           <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
 
-        {/* Footer with Enhanced NAP and Map */}
+        {/* Footer with Enhanced NAP and Map - Hide on lighting page */}
+        {location.pathname !== '/light-installation' && (
         <footer className="bg-green-800 text-white">
           <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -498,8 +499,10 @@ function App() {
             </div>
           </div>
         </footer>
+        )}
 
-        {/* Sticky Mobile CTA */}
+        {/* Sticky Mobile CTA - Hide on lighting page */}
+        {location.pathname !== '/light-installation' && (
         <div className="fixed bottom-0 left-0 right-0 md:hidden bg-green-600 p-4 text-white text-center z-40">
           <a 
             href="tel:7082742281" 
@@ -508,6 +511,7 @@ function App() {
             Call Now: (708) 274-2281
           </a>
         </div>
+        )}
       </div>
     </HelmetProvider>
   );
