@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { supabase } from '../lib/supabase';
 
 declare global {
   interface Window {
@@ -18,47 +19,62 @@ const ContactForm = () => {
     service: '',
     message: ''
   });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setStatus('loading');
+    setErrorMessage('');
+
     try {
-      const response = await fetch('https://hook.us2.make.com/o1r5uabdj45mubiom62d6cb444ofzz57', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      
-      if (response.ok) {
-        // Track form submission in Google Analytics
-        if (window.gtag) {
-          // Google Analytics 4 event
-          window.gtag('event', 'form_submit', {
-            event_category: 'lead',
-            event_label: 'Contact Form'
-          });
+      const { error } = await supabase
+        .from('contacts')
+        .insert([{
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: `Address: ${formData.address}\n\nAdditional Details: ${formData.message}`,
+          source: 'lawn-care-website'
+        }]);
 
-          // Google Ads conversion tracking
-          window.gtag('event', 'conversion', {
-            'send_to': 'AW-11416594700/abcdefghijklmnop', // Replace with your actual conversion label
-            'value': 1.0,
-            'currency': 'USD'
-          });
-        }
+      if (error) throw error;
 
-        // Track form submission in Facebook Pixel
-        if (window.fbq) {
-          window.fbq('track', 'Lead');
-        }
+      // Track form submission in Google Analytics
+      if (window.gtag) {
+        // Google Analytics 4 event
+        window.gtag('event', 'form_submit', {
+          event_category: 'lead',
+          event_label: 'Contact Form'
+        });
 
-        navigate('/thank-you');
-      } else {
-        throw new Error('Failed to submit form');
+        // Google Ads conversion tracking
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-11416594700/lawn-care-conversion',
+          'value': 1.0,
+          'currency': 'USD'
+        });
       }
+
+      // Track form submission in Facebook Pixel
+      if (window.fbq) {
+        window.fbq('track', 'Lead', {
+          content_name: 'Lawn Care Service',
+          content_category: 'Lawn Care'
+        });
+      }
+
+      setStatus('success');
+
+      // Navigate to thank you page after short delay
+      setTimeout(() => {
+        navigate('/thank-you');
+      }, 1500);
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('There was an error submitting your request. Please try again.');
+      setStatus('error');
+      setErrorMessage('Failed to submit form. Please try calling us directly at (708) 274-2281.');
     }
   };
 
@@ -169,12 +185,25 @@ const ContactForm = () => {
           ></textarea>
         </div>
 
+        {status === 'success' && (
+          <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+            Thank you! We'll contact you within 24 hours to discuss your lawn care needs.
+          </div>
+        )}
+
+        {status === 'error' && (
+          <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+            {errorMessage}
+          </div>
+        )}
+
         <div className="text-center">
           <button
             type="submit"
-            className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-white bg-orange-500 hover:bg-orange-600 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-orange-300"
+            disabled={status === 'loading'}
+            className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-white bg-orange-500 hover:bg-orange-600 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-orange-300 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:transform-none"
           >
-            Get Your Free Quote
+            {status === 'loading' ? 'Submitting...' : 'Get Your Free Quote'}
           </button>
         </div>
       </form>
