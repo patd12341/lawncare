@@ -156,9 +156,9 @@ const LightInstallation = () => {
                 <div className="bg-orange-600 rounded-lg w-14 h-14 flex items-center justify-center mb-4">
                   <DollarSign className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">No More Ladders</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Install Once</h3>
                 <p className="text-gray-700">
-                  Install once, enjoy forever. Never climb a ladder again to hang or remove seasonal lights. Change colors in the app.
+                  Set it and forget it. No more climbing ladders or taking lights down in the cold — your lighting is permanent and app-controlled.
                 </p>
               </div>
             </div>
