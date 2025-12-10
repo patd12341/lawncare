@@ -6,6 +6,7 @@ import { trackPageView } from './lib/analytics';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import DataDeletion from './pages/DataDeletion';
 import LightInstallation from './pages/LightInstallation';
+import Fencing from './pages/Fencing';
 import MowingService from './pages/services/MowingService';
 import AerationService from './pages/services/AerationService';
 import FertilizationService from './pages/services/FertilizationService';
@@ -393,6 +394,7 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/data-deletion" element={<DataDeletion />} />
           <Route path="/light-installation" element={<LightInstallation />} />
+          <Route path="/fencing" element={<Fencing />} />
           <Route path="/services/mowing" element={<MowingService />} />
           <Route path="/services/aeration" element={<AerationService />} />
           <Route path="/services/fertilization" element={<FertilizationService />} />
