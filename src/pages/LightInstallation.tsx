@@ -181,7 +181,7 @@ const LightInstallation = () => {
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <div className="bg-white rounded-xl shadow-lg p-8 border-2 border-gray-200 hover:border-green-500 transition-all">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Small Homes</h3>
-                <p className="text-4xl font-bold text-green-600 mb-4">$350 - $700</p>
+                <p className="text-4xl font-bold text-green-600 mb-4">$150 - $250</p>
                 <p className="text-gray-600 mb-4">Perfect for smaller rooflines or single sections</p>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">
@@ -204,7 +204,7 @@ const LightInstallation = () => {
                   MOST POPULAR
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Medium Homes</h3>
-                <p className="text-4xl font-bold text-white mb-4">$700 - $1,200</p>
+                <p className="text-4xl font-bold text-white mb-4">$250 - $350</p>
                 <p className="text-green-50 mb-4">Ideal for most single-family homes</p>
                 <ul className="space-y-2 text-white">
                   <li className="flex items-start">
@@ -228,7 +228,7 @@ const LightInstallation = () => {
 
               <div className="bg-white rounded-xl shadow-lg p-8 border-2 border-gray-200 hover:border-green-500 transition-all">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Large Homes</h3>
-                <p className="text-4xl font-bold text-green-600 mb-4">$1,200 - $2,000+</p>
+                <p className="text-4xl font-bold text-green-600 mb-4">$350 - $450</p>
                 <p className="text-gray-600 mb-4">For larger properties or multi-zone installs</p>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">
@@ -319,7 +319,7 @@ const LightInstallation = () => {
                   </tr>
                   <tr className="hover:bg-gray-50 bg-blue-50">
                     <td className="px-6 py-4 font-semibold text-gray-900">Cost over 5 years</td>
-                    <td className="px-6 py-4 text-center text-green-600 font-semibold">$700-$1,200 (one time)</td>
+                    <td className="px-6 py-4 text-center text-green-600 font-semibold">$150-$450 (one time)</td>
                     <td className="px-6 py-4 text-center text-gray-400 font-semibold">$1,500-$3,000+</td>
                   </tr>
                 </tbody>
