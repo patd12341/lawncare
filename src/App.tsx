@@ -343,7 +343,8 @@ function App() {
   return (
     <HelmetProvider>
       <div className="min-h-screen bg-white">
-        {/* Navigation */}
+        {/* Navigation - Hide on lighting and handyman pages */}
+        {location.pathname !== '/light-installation' && location.pathname !== '/handyman' && (
         <nav className="bg-green-800 text-white fixed w-full z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
@@ -389,6 +390,7 @@ function App() {
             </div>
           )}
         </nav>
+        )}
 
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -405,8 +407,8 @@ function App() {
           <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
 
-        {/* Footer with Enhanced NAP and Map - Hide on lighting page */}
-        {location.pathname !== '/light-installation' && (
+        {/* Footer with Enhanced NAP and Map - Hide on lighting and handyman pages */}
+        {location.pathname !== '/light-installation' && location.pathname !== '/handyman' && (
         <footer className="bg-green-800 text-white">
           <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -505,8 +507,8 @@ function App() {
         </footer>
         )}
 
-        {/* Sticky Mobile CTA - Hide on lighting page */}
-        {location.pathname !== '/light-installation' && (
+        {/* Sticky Mobile CTA - Hide on lighting and handyman pages */}
+        {location.pathname !== '/light-installation' && location.pathname !== '/handyman' && (
         <div className="fixed bottom-0 left-0 right-0 md:hidden bg-green-600 p-4 text-white text-center z-40">
           <a 
             href="tel:7082742281" 

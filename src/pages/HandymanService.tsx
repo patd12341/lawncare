@@ -78,7 +78,7 @@ const HandymanService = () => {
         <meta property="og:url" content="https://patwslawncare.com/handyman" />
       </Helmet>
 
-      <div className="min-h-screen bg-white pt-16">
+      <div className="min-h-screen bg-white">
         {/* Hero Section */}
         <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-orange-900 text-white overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1920&auto=format&fit=crop&q=80')] opacity-20 bg-cover bg-center"></div>
