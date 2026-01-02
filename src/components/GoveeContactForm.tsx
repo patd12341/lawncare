@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 
 declare global {
@@ -9,6 +10,7 @@ declare global {
 }
 
 const GoveeContactForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -94,17 +96,11 @@ const GoveeContactForm = () => {
       }
 
       setStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        installLocation: [],
-        rooflineLength: '',
-        hasLights: '',
-        message: ''
-      });
 
-      setTimeout(() => setStatus('idle'), 5000);
+      // Navigate to thank you page after short delay
+      setTimeout(() => {
+        navigate('/thank-you');
+      }, 1500);
     } catch (error) {
       console.error('Error submitting form:', error);
       setStatus('error');
