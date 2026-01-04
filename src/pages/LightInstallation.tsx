@@ -15,7 +15,7 @@ const LightInstallation = () => {
   }, []);
 
   const scrollToForm = () => {
-    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -483,7 +483,8 @@ const LightInstallation = () => {
           </div>
 
           {/* Contact Form */}
-          <div id="contact-form" className="bg-white rounded-2xl shadow-2xl p-8 lg:p-12 border-t-4 border-green-600">
+          <div id="quote"></div>
+          <div id="contact" className="bg-white rounded-2xl shadow-2xl p-8 lg:p-12 border-t-4 border-green-600">
             <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
               Get Your Free Govee Installation Quote
             </h2>
