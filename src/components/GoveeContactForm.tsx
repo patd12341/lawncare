@@ -16,7 +16,6 @@ const GoveeContactForm = () => {
     email: '',
     phone: '',
     installLocation: [] as string[],
-    rooflineLength: '',
     hasLights: '',
     message: ''
   });
@@ -46,7 +45,7 @@ const GoveeContactForm = () => {
           email: formData.email,
           phone: formData.phone,
           service: 'Govee Lighting Installation',
-          message: `Install Location: ${formData.installLocation.join(', ')}\nRoofline Length: ${formData.rooflineLength}\nHas Lights: ${formData.hasLights}\n\nAdditional Info: ${formData.message}`,
+          message: `Install Location: ${formData.installLocation.join(', ')}\nHas Lights: ${formData.hasLights}\n\nAdditional Info: ${formData.message}`,
           source: 'govee-landing-page'
         }]);
 
@@ -64,7 +63,6 @@ const GoveeContactForm = () => {
           phone: formData.phone,
           service: 'Govee Lighting Installation',
           installLocation: formData.installLocation.join(', '),
-          rooflineLength: formData.rooflineLength,
           hasLights: formData.hasLights,
           message: formData.message,
           source: 'govee-landing-page'
@@ -113,12 +111,11 @@ const GoveeContactForm = () => {
       <div className="grid md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-            Name *
+            Name
           </label>
           <input
             type="text"
             id="name"
-            required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
@@ -144,12 +141,11 @@ const GoveeContactForm = () => {
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-          Email Address *
+          Email Address
         </label>
         <input
           type="email"
           id="email"
-          required
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
@@ -159,10 +155,10 @@ const GoveeContactForm = () => {
 
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-3">
-          Where would you like your lights installed? *
+          Where would you like your lights installed?
         </label>
         <div className="space-y-3">
-          {['Roofline', 'Garage / Entry', 'Patio', 'Landscape'].map((location) => (
+          {['Garage / Entry', 'Patio', 'Landscape'].map((location) => (
             <label key={location} className="flex items-center">
               <input
                 type="checkbox"
@@ -177,22 +173,8 @@ const GoveeContactForm = () => {
       </div>
 
       <div>
-        <label htmlFor="rooflineLength" className="block text-sm font-medium text-gray-700 mb-2">
-          Approx. roofline length? (If unknown, say "I don't know")
-        </label>
-        <input
-          type="text"
-          id="rooflineLength"
-          value={formData.rooflineLength}
-          onChange={(e) => setFormData({ ...formData, rooflineLength: e.target.value })}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-          placeholder="e.g., 100 feet or I don't know"
-        />
-      </div>
-
-      <div>
         <label className="block text-sm font-medium text-gray-700 mb-3">
-          Do you already own the Govee lights? *
+          Do you already own the Govee lights?
         </label>
         <div className="space-y-2">
           <label className="flex items-center">
@@ -203,7 +185,6 @@ const GoveeContactForm = () => {
               checked={formData.hasLights === 'yes'}
               onChange={(e) => setFormData({ ...formData, hasLights: e.target.value })}
               className="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500"
-              required
             />
             <span className="ml-3 text-gray-700">Yes, I already have them</span>
           </label>
