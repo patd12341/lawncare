@@ -15,21 +15,11 @@ const GoveeContactForm = () => {
     name: '',
     email: '',
     phone: '',
-    installLocation: [] as string[],
     hasLights: '',
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
-
-  const handleCheckboxChange = (location: string) => {
-    setFormData(prev => ({
-      ...prev,
-      installLocation: prev.installLocation.includes(location)
-        ? prev.installLocation.filter(l => l !== location)
-        : [...prev.installLocation, location]
-    }));
-  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -45,7 +35,7 @@ const GoveeContactForm = () => {
           email: formData.email,
           phone: formData.phone,
           service: 'Govee Lighting Installation',
-          message: `Install Location: ${formData.installLocation.join(', ')}\nHas Lights: ${formData.hasLights}\n\nAdditional Info: ${formData.message}`,
+          message: `Has Lights: ${formData.hasLights}\n\nAdditional Info: ${formData.message}`,
           source: 'govee-landing-page'
         }]);
 
@@ -62,7 +52,6 @@ const GoveeContactForm = () => {
           email: formData.email,
           phone: formData.phone,
           service: 'Govee Lighting Installation',
-          installLocation: formData.installLocation.join(', '),
           hasLights: formData.hasLights,
           message: formData.message,
           source: 'govee-landing-page'
@@ -151,25 +140,6 @@ const GoveeContactForm = () => {
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
           placeholder="john@example.com"
         />
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-3">
-          Where would you like your lights installed?
-        </label>
-        <div className="space-y-3">
-          {['Garage / Entry', 'Patio', 'Landscape'].map((location) => (
-            <label key={location} className="flex items-center">
-              <input
-                type="checkbox"
-                checked={formData.installLocation.includes(location)}
-                onChange={() => handleCheckboxChange(location)}
-                className="w-5 h-5 text-green-600 border-gray-300 rounded focus:ring-green-500"
-              />
-              <span className="ml-3 text-gray-700">{location}</span>
-            </label>
-          ))}
-        </div>
       </div>
 
       <div>
