@@ -10,7 +10,6 @@ import Fencing from './pages/Fencing';
 import HandymanService from './pages/HandymanService';
 import MowingService from './pages/services/MowingService';
 import AerationService from './pages/services/AerationService';
-import FertilizationService from './pages/services/FertilizationService';
 import CleanupService from './pages/services/CleanupService';
 import SnowRemovalService from './pages/services/SnowRemovalService';
 import ContactForm from './components/ContactForm';
@@ -19,7 +18,6 @@ import TestimonialsSlider from './components/TestimonialsSlider';
 // Import all images using Vite's asset handling
 import mowAndTrim from './assets/mow-and-trim.png';
 import aerationService from './assets/aeration-service.png';
-import fertilizationService from './assets/fertilization-service.png';
 import seasonalCleanup from './assets/seasonal-cleanup.png';
 import snowRemoval from './assets/snow-removal.avif';
 import aboutUsImage from './assets/about-us.png';
@@ -109,11 +107,11 @@ function App() {
     <>
       <Helmet>
         <title>Lawn Care in New Lenox, IL | Pat's Lawn Care</title>
-        <meta name="description" content="Professional lawn care services in New Lenox, IL. Mowing, fertilization, aeration & more. Serving Frankfort, Mokena, Manhattan. Free estimates. Call (708) 274-2281." />
+        <meta name="description" content="Professional lawn care services in New Lenox, IL. Mowing, aeration & more. Serving Frankfort, Mokena, Manhattan. Free estimates. Call (708) 274-2281." />
         <link rel="canonical" href="https://patwslawncare.com" />
-        <meta name="keywords" content="lawn care New Lenox, lawn mowing Frankfort, fertilization Mokena, aeration service Will County, professional landscaping Illinois" />
+        <meta name="keywords" content="lawn care New Lenox, lawn mowing Frankfort, aeration service Will County, professional landscaping Illinois" />
         <meta property="og:title" content="Professional Lawn Care Services in New Lenox, IL | Pat's Lawn Care" />
-        <meta property="og:description" content="Expert lawn mowing, fertilization, and aeration services in New Lenox, Frankfort, and Mokena. Get your free estimate today!" />
+        <meta property="og:description" content="Expert lawn mowing and aeration services in New Lenox, Frankfort, and Mokena. Get your free estimate today!" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://patwslawncare.com" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -315,7 +313,7 @@ function App() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Pat's Lawn Care",
-            "description": "Professional lawn care services in New Lenox, IL. Mowing, fertilization, aeration and more.",
+            "description": "Professional lawn care services in New Lenox, IL. Mowing, aeration and more.",
             "url": "https://patwslawncare.com",
             "telephone": "(708) 274-2281",
             "email": "info@patslawncare.com",
@@ -333,7 +331,7 @@ function App() {
               "longitude": "-87.9673"
             },
             "areaServed": ["New Lenox", "Frankfort", "Mokena", "Manhattan", "Joliet", "Orland Park", "Tinley Park", "Homer Glen", "Lockport", "Romeoville"],
-            "serviceType": ["Lawn Mowing", "Fertilization", "Aeration", "Seasonal Cleanup", "Landscaping Design", "Landscape Installation"]
+            "serviceType": ["Lawn Mowing", "Aeration", "Seasonal Cleanup", "Landscaping Design", "Landscape Installation"]
           })
         }}
       />
@@ -401,7 +399,6 @@ function App() {
           <Route path="/handyman" element={<HandymanService />} />
           <Route path="/services/mowing" element={<MowingService />} />
           <Route path="/services/aeration" element={<AerationService />} />
-          <Route path="/services/fertilization" element={<FertilizationService />} />
           <Route path="/services/cleanup" element={<CleanupService />} />
           <Route path="/services/snow-removal" element={<SnowRemovalService />} />
           <Route path="/thank-you" element={<ThankYou />} />
@@ -434,9 +431,6 @@ function App() {
                   </Link>
                   <Link to="/services/aeration" className="block text-green-200 hover:text-white transition-colors">
                     Aeration
-                  </Link>
-                  <Link to="/services/fertilization" className="block text-green-200 hover:text-white transition-colors">
-                    Fertilization
                   </Link>
                   <Link to="/services/cleanup" className="block text-green-200 hover:text-white transition-colors">
                     Seasonal Cleanup
