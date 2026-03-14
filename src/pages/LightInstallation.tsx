@@ -430,7 +430,7 @@ const LightInstallation = () => {
                   How long does installation take?
                 </h3>
                 <p className="text-gray-700">
-                  Most installations take 2-4 hours depending on home size. We'll complete everything in a single visit, including app setup and testing.
+                  Most installations take 1-2 days depending on home size and complexity. We'll complete everything including app setup and testing.
                 </p>
               </div>
 
