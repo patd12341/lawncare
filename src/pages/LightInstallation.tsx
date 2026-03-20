@@ -181,12 +181,13 @@ const LightInstallation = () => {
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <div className="bg-white rounded-xl shadow-lg p-8 border-2 border-gray-200 hover:border-green-500 transition-all">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Small Homes</h3>
-                <p className="text-4xl font-bold text-green-600 mb-4">$200 - $300</p>
-                <p className="text-gray-600 mb-4">Perfect for smaller rooflines or single sections</p>
+                <p className="text-4xl font-bold text-green-600 mb-4">$2,000</p>
+                <p className="text-sm text-gray-500 mb-4">One-time installation</p>
+                <p className="text-gray-600 mb-4">Perfect for smaller rooflines</p>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Up to 50ft roofline</span>
+                    <span>Up to 150ft roofline</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -204,12 +205,13 @@ const LightInstallation = () => {
                   MOST POPULAR
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Medium Homes</h3>
-                <p className="text-4xl font-bold text-white mb-4">$300 - $400</p>
+                <p className="text-4xl font-bold text-white mb-4">$2,500</p>
+                <p className="text-sm text-green-100 mb-4">One-time installation</p>
                 <p className="text-green-50 mb-4">Ideal for most single-family homes</p>
                 <ul className="space-y-2 text-white">
                   <li className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-white mr-2 mt-0.5 flex-shrink-0" />
-                    <span>50-100ft roofline</span>
+                    <span>Around 250ft roofline</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-white mr-2 mt-0.5 flex-shrink-0" />
@@ -228,12 +230,13 @@ const LightInstallation = () => {
 
               <div className="bg-white rounded-xl shadow-lg p-8 border-2 border-gray-200 hover:border-green-500 transition-all">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Large Homes</h3>
-                <p className="text-4xl font-bold text-green-600 mb-4">$400 - $500</p>
+                <p className="text-4xl font-bold text-green-600 mb-4">$3,000+</p>
+                <p className="text-sm text-gray-500 mb-4">One-time installation</p>
                 <p className="text-gray-600 mb-4">For larger properties or multi-zone installs</p>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>100ft+ roofline</span>
+                    <span>350ft+ roofline</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -319,7 +322,7 @@ const LightInstallation = () => {
                   </tr>
                   <tr className="hover:bg-gray-50 bg-blue-50">
                     <td className="px-6 py-4 font-semibold text-gray-900">Cost over 5 years</td>
-                    <td className="px-6 py-4 text-center text-green-600 font-semibold">$200-$500 (one time)</td>
+                    <td className="px-6 py-4 text-center text-green-600 font-semibold">$2,000-$3,000+ (one time)</td>
                     <td className="px-6 py-4 text-center text-gray-400 font-semibold">$1,500-$3,000+</td>
                   </tr>
                 </tbody>
